@@ -1,0 +1,58 @@
+
+
+html, body, main {
+    height: 100%;
+}
+
+.box {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.headline {
+    width: 940px;
+}
+
+@keyframes typing {
+    from {width: 0}
+    to {width: 100%}
+}
+
+@keyframes blink {
+  0% {background: transparent}
+  50% {background: #000}
+  100% {background: transparent}
+}
+
+
+.code-cursor {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.tagline {
+    font-family: monospace;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width:0;
+    font-size: 20px;
+    animation: typing;
+    animation-duration: 3s;
+    animation-timing-function: steps(30,end);
+    animation-fill-mode: forwards;
+}
+
+.cursor{
+    content: ' ';
+    background: lime;
+    line-height: 17px;
+    margin-left: 3px;
+    animation: blink 0.8s infinite;
+    width: 3px;
+    height: 15px;
+}
