@@ -14,6 +14,8 @@ html, body, main {
 
 .headline {
     width: 940px;
+    display: flex;
+    flex-direction: column;
 }
 
 @keyframes typing {
@@ -33,10 +35,9 @@ html, body, main {
     overflow: hidden;
     white-space: nowrap;
 }
-
 .tagline {
     font-family: monospace;
-    display: inline-block;
+    display: flex; 
     overflow: hidden;
     white-space: nowrap;
     width:0;
@@ -47,6 +48,20 @@ html, body, main {
     animation-fill-mode: forwards;
 }
 
+.tagline.--mobile {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    animation: none;
+    width: auto;
+}
+
+.softpearImage, .tagline {
+    display: none;
+}
+
 .cursor{
     content: ' ';
     background: lime;
@@ -55,4 +70,27 @@ html, body, main {
     animation: blink 0.8s infinite;
     width: 3px;
     height: 15px;
+}
+
+.--mobile {
+    display: block;
+}
+
+.imageBox__mobile {
+    display: flex;
+    justify-content: center;
+}
+
+.tagline__mobile {
+
+}
+
+@media (min-width: 965px) {
+    .softpearImage, .tagline {
+        display: block;
+    }
+    .--mobile,.tagline.--mobile {
+        display: none;
+    }
+
 }
